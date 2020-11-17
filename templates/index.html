@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+    <br>
+    <br>
+    <br>
+    <div align="middle">
+    <h1>{% block title %} CS4312 - Cloud Computing {% endblock %}</h1>
+    <br>
+    <h2>Welcome to our CS4312 Fall 2020 Project. Our project uses a Trip advisor database to predict a rating score based on a user's comment and store results to Cloud SQL</h2>
+    <img src="{{url_for('static', filename='tripadvisorlogo.jpg', width=100, height=200)}}" alt="tripadvisorlogo" class="center" />
+    </div>
+
+{% endblock %}

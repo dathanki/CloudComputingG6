@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div align="center">
+<br>
+<h1 style='color:brown'>{% block title %} Let's Predict a Review Score {% endblock %}</h1>
+<br>
+<form method="post">
+    <div class="form-group">
+        <label for="input"><b>Review</b></label>
+        <input type="text" name="input"
+               placeholder="amazing service, I love it!" text-align:"center" class="form-control"
+               value="{{ request.form['input'] }}"></input>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+    <div class="form-group">
+        <label for="content"><b>User Input</b></label>
+        <textarea disabled name="content" placeholder=""
+                  class="form-control">{{ request.form['input'] }}</textarea>
+    </div>
+<br>
+    <div class="form-group">
+        <label for="label"><b>Predicted Score</b></label>
+        <textarea disabled name="label" placeholder=""
+                  class="form-control">{{ label }}</textarea>
+<br>
+    </div>
+    <div class="form-group">
+        <label for="prob"><b>Predicted Probability</b></label>
+        <textarea disabled name="prob" placeholder=""
+                  class="form-control">{{ prob }}</textarea>
+    </div>
+</form>
+</div>
+<!--    <p>{{ post }}</p>-->
+{% endblock %}
