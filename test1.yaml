@@ -3,15 +3,15 @@ kind: Deployment
 metadata:
   annotations:
     deployment.kubernetes.io/revision: "1"
-  creationTimestamp: "2020-11-17T02:12:30Z"
+  creationTimestamp: "2020-11-17T16:32:18Z"
   generation: 3
   labels:
     app: test1
   name: test1
   namespace: default
-  resourceVersion: "4790"
+  resourceVersion: "6106"
   selfLink: /apis/apps/v1/namespaces/default/deployments/test1
-  uid: 15afaee0-67ef-4bdf-ae68-24bca5a63024
+  uid: 7fefbc41-feec-4136-bced-8246edc55f81
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
@@ -31,7 +31,7 @@ spec:
         app: test1
     spec:
       containers:
-      - image: gcr.io/ccgroup6project/test1:v1
+      - image: gcr.io/ccgroup6project/test1:v2
         imagePullPolicy: IfNotPresent
         name: test1
         resources: {}
@@ -45,18 +45,18 @@ spec:
 status:
   availableReplicas: 1
   conditions:
-  - lastTransitionTime: "2020-11-17T02:13:32Z"
-    lastUpdateTime: "2020-11-17T02:13:32Z"
+  - lastTransitionTime: "2020-11-17T16:32:18Z"
+    lastUpdateTime: "2020-11-17T16:32:41Z"
+    message: ReplicaSet "test1-77b77669fd" has successfully progressed.
+    reason: NewReplicaSetAvailable
+    status: "True"
+    type: Progressing
+  - lastTransitionTime: "2020-11-17T16:34:18Z"
+    lastUpdateTime: "2020-11-17T16:34:18Z"
     message: Deployment has minimum availability.
     reason: MinimumReplicasAvailable
     status: "True"
     type: Available
-  - lastTransitionTime: "2020-11-17T02:12:30Z"
-    lastUpdateTime: "2020-11-17T02:13:32Z"
-    message: ReplicaSet "test1-7bdc6c566c" has successfully progressed.
-    reason: NewReplicaSetAvailable
-    status: "True"
-    type: Progressing
   observedGeneration: 3
   readyReplicas: 1
   replicas: 1
