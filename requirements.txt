@@ -69,3 +69,8 @@ webencodings==0.5.1
 Werkzeug==1.0.1
 wordcloud==1.8.0
 mysql-connector-python==8.0.22
+requests
+google-api-python-client
+google-auth-httplib2
+google-auth-oauthlib
+google-cloud-storage

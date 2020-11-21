@@ -69,8 +69,16 @@ function myFunction() {
 
 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for review.." title="Type in a name">
 <div>
-<button style="float: left;" type="button">Download!</button>
+<form method="post">
 <button style="float: left;" >Export to Bucket!</button>
+</form>
+
+<a href="../static/data.csv" download>
+<!-- Alternate method to download files from gogole bucket if open to public
+<a href="https://storage.googleapis.com/group6project/data.csv" download>-->
+<button style="float: left;" type="submit">Download!</button>
+</a>
+
 </div>
 
 <div id="myTable" class="table-wrapper-scroll-y my-custom-scrollbar">
