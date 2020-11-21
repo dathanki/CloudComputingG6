@@ -155,9 +155,9 @@ def sql():
 		'password': 'group6',
 		'host': '35.224.129.144',
 		'client_flags': [ClientFlag.SSL],
-		'ssl_ca': 'sqlproj/server-ca.pem',
-		'ssl_cert': 'sqlproj/client-cert.pem',
-		'ssl_key': 'sqlproj/client-key.pem'
+		'ssl_ca': './sqlproj/server-ca.pem',
+		'ssl_cert': './sqlproj/client-cert.pem',
+		'ssl_key': './sqlproj/client-key.pem'
 	}
 	# now we establish our connection
 	cnxn = mysql.connector.connect(**config)
@@ -258,9 +258,9 @@ def inference():
 				'password': 'group6',
 				'host': '35.224.129.144',
 				'client_flags': [ClientFlag.SSL],
-				'ssl_ca': 'sqlproj/server-ca.pem',
-				'ssl_cert': 'sqlproj/client-cert.pem',
-				'ssl_key': 'sqlproj/client-key.pem'
+				'ssl_ca': './sqlproj/server-ca.pem',
+				'ssl_cert': './sqlproj/client-cert.pem',
+				'ssl_key': './sqlproj/client-key.pem'
 			}
 			cnxn = mysql.connector.connect(**config)
 			cursor = cnxn.cursor()  # initialize connection cursor
