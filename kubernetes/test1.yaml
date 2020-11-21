@@ -1,21 +1,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  annotations:
-    deployment.kubernetes.io/revision: "1"
-  creationTimestamp: "2020-11-17T16:32:18Z"
-  generation: 3
   labels:
     app: test1
   name: test1
   namespace: default
-  resourceVersion: "6106"
-  selfLink: /apis/apps/v1/namespaces/default/deployments/test1
-  uid: 7fefbc41-feec-4136-bced-8246edc55f81
 spec:
-  progressDeadlineSeconds: 600
   replicas: 1
-  revisionHistoryLimit: 10
   selector:
     matchLabels:
       app: test1
@@ -26,38 +17,50 @@ spec:
     type: RollingUpdate
   template:
     metadata:
-      creationTimestamp: null
       labels:
         app: test1
     spec:
       containers:
-      - image: gcr.io/ccgroup6project/test1:v2
-        imagePullPolicy: IfNotPresent
-        name: test1
-        resources: {}
-        terminationMessagePath: /dev/termination-log
-        terminationMessagePolicy: File
-      dnsPolicy: ClusterFirst
-      restartPolicy: Always
-      schedulerName: default-scheduler
-      securityContext: {}
-      terminationGracePeriodSeconds: 30
-status:
-  availableReplicas: 1
-  conditions:
-  - lastTransitionTime: "2020-11-17T16:32:18Z"
-    lastUpdateTime: "2020-11-17T16:32:41Z"
-    message: ReplicaSet "test1-77b77669fd" has successfully progressed.
-    reason: NewReplicaSetAvailable
-    status: "True"
-    type: Progressing
-  - lastTransitionTime: "2020-11-17T16:34:18Z"
-    lastUpdateTime: "2020-11-17T16:34:18Z"
-    message: Deployment has minimum availability.
-    reason: MinimumReplicasAvailable
-    status: "True"
-    type: Available
-  observedGeneration: 3
-  readyReplicas: 1
-  replicas: 1
-  updatedReplicas: 1
+        - image: gcr.io/ccgroup6project/github.com/dathanki/cloudcomputingg6
+          imagePullPolicy: IfNotPresent
+          name: test1
+---
+apiVersion: autoscaling/v2beta1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: test1
+  namespace: default
+spec:
+  maxReplicas: 5
+  metrics:
+    - resource:
+        name: cpu
+        targetAverageUtilization: 80
+      type: Resource
+  minReplicas: 1
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: test1
+---
+apiVersion: v1
+kind: Service
+metadata:
+  finalizers:
+    - service.kubernetes.io/load-balancer-cleanup
+  labels:
+    app: test1
+  name: test1-service
+  namespace: default
+spec:
+  clusterIP: 10.35.244.61
+  externalTrafficPolicy: Cluster
+  ports:
+    - nodePort: 30528
+      port: 80
+      protocol: TCP
+      targetPort: 8080
+  selector:
+    app: test1
+  sessionAffinity: None
+  type: LoadBalancer
