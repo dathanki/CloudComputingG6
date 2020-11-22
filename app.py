@@ -194,13 +194,13 @@ def sql():
 		request1 =service.instances().export(project='comp4312-293108', instance='group6project', body=body)
 		response=request1.execute()
 		#time delay to wait for export to finish
-		time.sleep(3)
+		#time.sleep(3)
 		#if request.method=="post":
-		print("In download.")
-		storage_client = storage.Client()
-		bucket = storage_client.bucket('group6project')
-		blob = bucket.blob('data.csv')
-		blob.download_to_filename('./static/data.csv')
+		#print("In download.")
+		#storage_client = storage.Client()
+		#bucket = storage_client.bucket('group6project')
+		#blob = bucket.blob('data.csv')
+		#blob.download_to_filename('./static/data.csv')
 
 		flash("Downloaded")
 
