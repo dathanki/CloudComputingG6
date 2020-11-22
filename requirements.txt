@@ -70,7 +70,8 @@ Werkzeug==1.0.1
 wordcloud==1.8.0
 mysql-connector-python==8.0.22
 requests
-google-api-python-client
 google-auth-httplib2
 google-auth-oauthlib
 google-cloud-storage
+google-api-python-client==1.7.11
+oauth2client==4.1.3

@@ -20,6 +20,8 @@ from mysql.connector.constants import ClientFlag
 from googleapiclient.discovery import build
 from google.cloud import storage
 import time
+import google.auth
+from google.oauth2 import service_account
 
 argparser = argparse.ArgumentParser(sys.argv[0])
 
@@ -166,9 +168,15 @@ def sql():
 	myresult = cursor.fetchall()
 	cnxn.close()  # close connection because we will be reconnecting to testdd
 	if request.method=="POST":
-
+		SCOPES = ['https://www.googleapis.com/auth/sqlservice.admin', 
+		'https://www.googleapis.com/auth/cloud-platform', 
+		'https://www.googleapis.com/auth/devstorage.full_control']
+		credentials_gcs_uri = "GCS URI WHERE YOU STORED AI PLATFORM SERVICE ACCOUNT CREDENTIALS"
+		credentials_path = "./comp4312-293108-507be8162030.json"
+		subprocess.call(f"gsutil cp {credentials_gcs_uri} {credentials_path}", shell=True)
+		credentials = service_account.Credentials.from_service_account_file(credentials_path, scopes=SCOPES)
 		service = build('sqladmin', 'v1beta4')
-
+		
 		body ={
 				  "exportContext": {
 					"databases": [
