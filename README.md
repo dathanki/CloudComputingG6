@@ -3,9 +3,9 @@
 
 ## Deliverables
 
-- [Google Compute Engine] - https://34.123.232.185/
+- [Deployed on Google Compute Engine] - https://34.123.232.185/
  
-- [Google Kubernetes Engine] - http://34.121.96.143/
+- [Deployed on Google Kubernetes Engine] - http://34.121.96.143/
 
 
 ## Note

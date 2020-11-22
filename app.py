@@ -175,7 +175,7 @@ def sql():
 		credentials_path = "./comp4312-293108-507be8162030.json"
 		subprocess.call(f"gsutil cp {credentials_gcs_uri} {credentials_path}", shell=True)
 		credentials = service_account.Credentials.from_service_account_file(credentials_path, scopes=SCOPES)
-		service = build('sqladmin', 'v1beta4')
+		service = build('sqladmin', 'v1beta4',credentials=credentials)
 		
 		body ={
 				  "exportContext": {
