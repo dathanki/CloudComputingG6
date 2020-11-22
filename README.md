@@ -5,7 +5,7 @@
 
 - [Deployed on Google Compute Engine] - http://34.121.255.244/
  
-- [Deployed on Google Kubernetes Engine] - https://34.121.96.143/
+- [Deployed on Google Kubernetes Engine] - http://34.121.96.143/
 
 
 ## Note
