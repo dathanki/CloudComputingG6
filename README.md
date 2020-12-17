@@ -6,7 +6,18 @@ The course consisted of a Group project that allowed us to apply key concepts in
 - [Deployed on Google Compute Engine] - http://34.121.255.244/   - **Service suspended**
 - [Deployed on Google Kubernetes Engine] - http://34.121.96.143/ - **Service suspended**
 
+Screenshots:
 
+![](https://github.com/dathanki/CloudComputingG6/blob/master/screenshots/main.png)
+> Landing page.
+
+
+![](https://github.com/dathanki/CloudComputingG6/blob/master/screenshots/inference%20page.png)
+> Inference page.
+
+
+![](https://github.com/dathanki/CloudComputingG6/blob/master/screenshots/results.png)
+> SQL storage page.
 
 
 ## Features
