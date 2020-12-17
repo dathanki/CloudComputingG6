@@ -8,7 +8,7 @@ Learning models, Cloud technologies and Web development into practice.
 
 
 #### Project Description
-In Group 6, we wanted  to focus on validating data, in particular hotel review data, we sourced our [dataset] from Kaggle, it consists of reviews from various users within various hotels posted on TripAdvisor. (https://www.kaggle.com/andrewmvd/trip-advisor-hotel-reviews).
+In Group 6, we wanted  to focus on validating data, in particular hotel review data, we sourced our [dataset](https://www.kaggle.com/andrewmvd/trip-advisor-hotel-reviews) from Kaggle, it consists of reviews from various users within various hotels posted on TripAdvisor.
 
 
 ### Deliverables
