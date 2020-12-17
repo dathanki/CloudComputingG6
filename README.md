@@ -27,7 +27,7 @@ pip install -r requirements.txt
 ## Usage & Details
 Since I had to suspend the Virtual Machine you would either create a clone of the instance, or give me a shout and I can have it running for the purpose of a Demo. 
 
-**Note: Will update soon with Documentation **
+**Note: Will update soon with Documentation**
 
 ## Credits
 Course content -  https://github.com/duytinvo/comp4312
